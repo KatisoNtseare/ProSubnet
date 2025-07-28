@@ -34,8 +34,8 @@ function OutputTable({ subnets }) {
       </table>
 
       {/* Summary Table */}
-      <div className="mt-6">
-        <h2 className="text-green-400 text-xl font-semibold mb-2"> Subnet Summary</h2>
+      <div className="mt-6 overflow-x-auto">
+        <h2 className="text-green-400 text-xl font-semibold mb-2">Subnet Summary</h2>
         <table className="min-w-max bg-gray-900 text-green-300 border border-green-600 text-sm">
           <thead className="bg-green-800">
             <tr>

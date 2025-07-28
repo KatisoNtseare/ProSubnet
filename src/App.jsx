@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import Terminal from "./components/Terminal";
 import Sidebar from "./components/Sidebar";
 import OutputTable from "./components/OutputTable";
-import Footer from "./components/Footer"; // ✅ Add Footer
+import Footer from "./components/Footer";
 import { BiSolidError } from "react-icons/bi";
 
 import { parseCommand } from "./logic/parseCommand";
@@ -15,6 +15,13 @@ function App() {
   const [outputText, setOutputText] = useState("");
   const [outputType, setOutputType] = useState("normal");
   const [showSidebar, setShowSidebar] = useState(true);
+
+  // On mount, hide sidebar on small screens by default
+  useLayoutEffect(() => {
+    if (window.innerWidth < 768) {
+      setShowSidebar(false);
+    }
+  }, []);
 
   const helpText = `
 Available Commands:
@@ -71,7 +78,8 @@ history
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-green-500 font-mono">
-      <div className="flex flex-1">
+      {/* Main content flex: vertical on small, horizontal on md+ */}
+      <div className="flex flex-1 flex-col md:flex-row">
         {/* Sidebar */}
         {showSidebar && (
           <Sidebar
@@ -81,13 +89,17 @@ history
           />
         )}
 
-        {/* Main Terminal Area */}
-        <div className="flex-1 p-4">
-          <div className="flex justify-between mb-4">
-            <h1 id="terminal" className="text-xl font-bold">IPv4 Subnetting Terminal</h1>
+        {/* Main area */}
+        <main className="flex-1 p-4 flex flex-col">
+          {/* Header */}
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-2">
+            <h1 id="terminal" className="text-xl font-bold text-center sm:text-left">
+              IPv4 Subnetting Terminal
+            </h1>
             <button
-              className="bg-green-600 px-3 py-1 rounded hover:bg-green-700 text-black"
+              className="bg-green-600 px-3 py-1 rounded hover:bg-green-700 text-black transition"
               onClick={() => setShowSidebar(!showSidebar)}
+              aria-label={showSidebar ? "Hide Sidebar" : "Show Sidebar"}
             >
               {showSidebar ? "Hide Sidebar" : "Show Sidebar"}
             </button>
@@ -96,22 +108,24 @@ history
           {/* Terminal Input */}
           <Terminal onCommand={handleCommand} history={history} />
 
-          {/* Output Section */}
-          {outputText ? (
-            <div className="mt-4 p-4 border rounded whitespace-pre-wrap bg-zinc-900">
-              {outputType === "error" ? (
-                <div className="text-red-500 flex items-center gap-2 font-semibold">
-                  <BiSolidError className="text-xl" />
-                  {outputText}
-                </div>
-              ) : (
-                <pre className="text-green-400">{outputText}</pre>
-              )}
-            </div>
-          ) : (
-            <OutputTable subnets={subnets} />
-          )}
-        </div>
+          {/* Output */}
+          <section className="mt-4 flex-1 overflow-auto">
+            {outputText ? (
+              <div className="p-4 border rounded whitespace-pre-wrap bg-zinc-900">
+                {outputType === "error" ? (
+                  <div className="text-red-500 flex items-center gap-2 font-semibold">
+                    <BiSolidError className="text-xl" />
+                    {outputText}
+                  </div>
+                ) : (
+                  <pre className="text-green-400">{outputText}</pre>
+                )}
+              </div>
+            ) : (
+              <OutputTable subnets={subnets} />
+            )}
+          </section>
+        </main>
       </div>
 
       {/* Footer */}

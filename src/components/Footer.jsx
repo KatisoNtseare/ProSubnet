@@ -3,10 +3,10 @@ import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="h-[110px] bg-zinc-900 text-white py-5 px-4 mt-auto border-t border-green-600 ">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+    <footer className="bg-zinc-900 text-white py-6 px-4 mt-auto border-t border-green-600">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between space-y-6 sm:space-y-0 text-center sm:text-left">
         {/* Call to Action */}
-        <div className="text-center md:text-left">
+        <div>
           <h3 className="text-xl font-semibold mb-1">
             Need Help with Networking or Coding or Any thing IT?
           </h3>
@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
 
         {/* WhatsApp Contact */}
-        <div className="text-center">
+        <div>
           <a
             href="https://wa.me/27633599308"
             target="_blank"
@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
 
         {/* Social Links */}
-        <div className="flex space-x-6">
+        <div className="flex space-x-6 justify-center sm:justify-start">
           <a
             href="https://github.com/KatisoNtseare"
             target="_blank"
@@ -52,7 +52,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom Text */}
-      <div className="text-center text-xs text-zinc-500 mt-2">
+      <div className="text-center text-xs text-zinc-500 mt-4">
         © {new Date().getFullYear()} Katiso Ntseare. All rights reserved.
       </div>
     </footer>
