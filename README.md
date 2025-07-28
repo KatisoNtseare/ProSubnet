@@ -68,18 +68,28 @@ history
 ### 🛠 Installation & Run Locally
 
 # Clone the repository
+```bash
 git clone https://github.com/KatisoNtseare/ProSubnet.git
 cd ProSubnet
+```
 
 # Install dependencies (choose one)
+```bash
 npm install
-# or
-yarn install
+```
+or
+```bash
+yarn  install
+```
 
 # Start the development server
+```bash
 npm run dev
-# or
+```
+or
+```bash
 yarn dev
+```
 
 Open http://localhost:5173 in your browser to access the app.
 
