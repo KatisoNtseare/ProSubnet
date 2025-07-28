@@ -106,12 +106,12 @@ Future plans: Add IPv6 support, export results (CSV/PDF), and enhanced VLSM visu
 ## 🤝 Contributing
 Contributions are welcome! Please:
 
--Fork the repository
--Create a feature branch (git checkout -b feature/your-feature)
--Commit your changes (git commit -m 'Add new feature')
--Push to branch (git push origin feature/your-feature)
--Open a pull request
--Make sure your code follows the current style and passes existing tests.
+- Fork the repository
+- Create a feature branch (git checkout -b feature/your-feature)
+- Commit your changes (git commit -m 'Add new feature')
+- Push to branch (git push origin feature/your-feature)
+- Open a pull request
+- Make sure your code follows the current style and passes existing tests.
 
 
 ## 🙋‍♂️ Contact & Support
