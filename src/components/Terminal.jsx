@@ -1,5 +1,6 @@
-// Terminal.jsx
 import React, { useState } from "react";
+
+import { FaTerminal } from "react-icons/fa6";
 
 function Terminal({ onCommand, history }) {
   const [input, setInput] = useState("");
@@ -29,8 +30,9 @@ function Terminal({ onCommand, history }) {
   };
 
   return (
-    <div className="bg-zinc-900 p-4 rounded border border-green-600">
-      <div className="text-sm">{">"} Enter your command:</div>
+    <div  id="terminal" className="terminal bg-zinc-900 p-4 rounded border border-green-600">
+      <div className="text-l flex gap-2">
+        <span className="text-green-400 text-xl"><FaTerminal /> </span> Enter your command:</div>
       <input
         className="w-full mt-2 p-2 bg-black text-green-500 border border-green-700 rounded"
         type="text"

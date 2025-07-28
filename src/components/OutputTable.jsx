@@ -1,8 +1,5 @@
-// File: src/components/OutputTable.jsx
-
 import React from "react";
 
-// 📊 Displays a table of subnetting results, with extended technical info
 function OutputTable({ subnets }) {
   if (!subnets || subnets.length === 0) return null;
 
@@ -14,7 +11,7 @@ function OutputTable({ subnets }) {
       <table className="min-w-full bg-gray-900 text-green-300 border border-green-600">
         <thead className="bg-green-800 text-sm">
           <tr>
-            <th className="px-4 py-2 border">Network</th>
+            <th className="px-4 py-2 border">Network Address</th>
             <th className="px-4 py-2 border">First Usable</th>
             <th className="px-4 py-2 border">Last Usable</th>
             <th className="px-4 py-2 border">Broadcast</th>
@@ -38,7 +35,7 @@ function OutputTable({ subnets }) {
 
       {/* Summary Table */}
       <div className="mt-6">
-        <h2 className="text-green-400 text-sm font-semibold mb-2">📋 Subnet Summary</h2>
+        <h2 className="text-green-400 text-xl font-semibold mb-2"> Subnet Summary</h2>
         <table className="min-w-max bg-gray-900 text-green-300 border border-green-600 text-sm">
           <thead className="bg-green-800">
             <tr>
