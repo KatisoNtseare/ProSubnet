@@ -106,18 +106,18 @@ Future plans: Add IPv6 support, export results (CSV/PDF), and enhanced VLSM visu
 ## 🤝 Contributing
 Contributions are welcome! Please:
 
-Fork the repository
-Create a feature branch (git checkout -b feature/your-feature)
-Commit your changes (git commit -m 'Add new feature')
-Push to branch (git push origin feature/your-feature)
-Open a pull request
-Make sure your code follows the current style and passes existing tests.
+-Fork the repository
+-Create a feature branch (git checkout -b feature/your-feature)
+-Commit your changes (git commit -m 'Add new feature')
+-Push to branch (git push origin feature/your-feature)
+-Open a pull request
+-Make sure your code follows the current style and passes existing tests.
 
 
 ## 🙋‍♂️ Contact & Support
-Created and maintained by Katiso Ntseare
-GitHub: github.com/KatisoNtseare
-Feel free to open issues or request features!
+-Created and maintained by Katiso Ntseare
+-GitHub: github.com/KatisoNtseare
+-Feel free to open issues or request features!
 
 
 Let me know if you want me to add badges (like build status, license, or NPM version) or sections like FAQ, troubleshooting, or detailed architecture!
