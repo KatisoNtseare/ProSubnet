@@ -14,11 +14,13 @@ function App() {
   const [history, setHistory] = useState([]);
   const [outputText, setOutputText] = useState("");
   const [outputType, setOutputType] = useState("normal");
-  const [showSidebar, setShowSidebar] = useState(true);
+  const [showSidebar, setShowSidebar] = useState(false); // default false on mount
 
-  // On mount, hide sidebar on small screens by default
+  // On mount, hide sidebar on small screens, show on desktop
   useLayoutEffect(() => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth >= 768) {
+      setShowSidebar(true);
+    } else {
       setShowSidebar(false);
     }
   }, []);
@@ -78,40 +80,45 @@ history
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-green-500 font-mono">
-      {/* Main content flex: vertical on small, horizontal on md+ */}
-      <div className="flex flex-1 flex-col md:flex-row">
+      {/* Main content: sidebar + main */}
+      <div className="flex flex-1 flex-col md:flex-row overflow-hidden">
         {/* Sidebar */}
         {showSidebar && (
           <Sidebar
             history={history}
             helpText={helpText}
             onClose={() => setShowSidebar(false)}
+            className="flex-shrink-0"
           />
         )}
 
         {/* Main area */}
-        <main className="flex-1 p-4 flex flex-col">
+        <main className="flex-1 p-4 flex flex-col overflow-hidden">
           {/* Header */}
           <div className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-2">
-            <h1 id="terminal" className="text-xl font-bold text-center sm:text-left">
+            <h1
+              id="terminal"
+              className="text-xl font-bold text-center sm:text-left select-none"
+            >
               IPv4 Subnetting Terminal
             </h1>
             <button
-              className="bg-green-600 px-3 py-1 rounded hover:bg-green-700 text-black transition"
+              className="bg-green-600 px-4 py-2 rounded hover:bg-green-700 text-black transition select-none"
               onClick={() => setShowSidebar(!showSidebar)}
-              aria-label={showSidebar ? "Hide Sidebar" : "Show Sidebar"}
+              aria-label={showSidebar ? "Hide Help" : "Show Help"}
+              type="button"
             >
-              {showSidebar ? "Hide Sidebar" : "Show Sidebar"}
+              {showSidebar ? "Hide Help" : "Show Help"}
             </button>
           </div>
 
           {/* Terminal Input */}
           <Terminal onCommand={handleCommand} history={history} />
 
-          {/* Output */}
+          {/* Output Section */}
           <section className="mt-4 flex-1 overflow-auto">
             {outputText ? (
-              <div className="p-4 border rounded whitespace-pre-wrap bg-zinc-900">
+              <div className="p-4 border rounded whitespace-pre-wrap bg-zinc-900 h-full flex items-center justify-center">
                 {outputType === "error" ? (
                   <div className="text-red-500 flex items-center gap-2 font-semibold">
                     <BiSolidError className="text-xl" />
