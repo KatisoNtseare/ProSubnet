@@ -21,12 +21,28 @@ A terminal-style React web app designed to assist students and network engineers
 
 ## 📸 Preview
 
+```bash
+IPv4 Normal Subnetting Command
+ipv4 net n 192.168.0.0/24 4
+```
 <img width="1365" height="641" alt="image" src="https://github.com/user-attachments/assets/c70abb0f-3a97-4f9b-8be9-24cca4478f8f" />
 
+```bash
+IPv4 VLSM Subnetting Command
+ipv4 net vlsm 192.168.1.0/24 100 50 20
+```
 <img width="1351" height="650" alt="image" src="https://github.com/user-attachments/assets/7af0bb7b-0b83-4a3d-8a80-5b95b32ad502" />
 
+```bash
+Help Command
+help
+```
 <img width="1343" height="645" alt="image" src="https://github.com/user-attachments/assets/7e7b9431-2183-46fd-af08-10e402a98599" />
 
+```bash
+History Command
+history
+```
 <img width="1355" height="648" alt="image" src="https://github.com/user-attachments/assets/53aaede1-05f7-4581-938c-12afe3665840" />
 
 
@@ -52,7 +68,7 @@ A terminal-style React web app designed to assist students and network engineers
 - Node.js (v16 or higher recommended)
 - npm or yarn
 
-### ## 🛠 Installation & Run
+### 🛠 Installation & Run
 
 1. Clone the repo:
 
