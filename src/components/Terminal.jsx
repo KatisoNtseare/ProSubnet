@@ -8,7 +8,7 @@ function Terminal({ onCommand, history }) {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       onCommand(input);
-      setInput("");
+      //setInput("");
       setHistoryIndex(null);
     }
 
@@ -41,6 +41,7 @@ function Terminal({ onCommand, history }) {
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="e.g. ipv4 net n 192.168.1.0/24 4"
+        spellCheck={false}
         aria-label="Terminal command input"
       />
     </div>
