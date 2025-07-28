@@ -115,9 +115,9 @@ Contributions are welcome! Please:
 
 
 ## 🙋‍♂️ Contact & Support
--Created and maintained by Katiso Ntseare
--GitHub: github.com/KatisoNtseare
--Feel free to open issues or request features!
+- Created and maintained by Katiso Ntseare
+- GitHub: github.com/KatisoNtseare
+- Feel free to open issues or request features!
 
 
 Let me know if you want me to add badges (like build status, license, or NPM version) or sections like FAQ, troubleshooting, or detailed architecture!
